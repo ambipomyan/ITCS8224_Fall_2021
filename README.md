@@ -32,3 +32,9 @@ squeue -j 1234567
 ```
 
 ```ST```=```PD``` indicates Pending
+
+## Source for this course
+environment: ```/projects/biomedimaging/biomedenv```
+
+## Implementation ideas
+Stack Res blocks to network
