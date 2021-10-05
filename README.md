@@ -46,6 +46,7 @@ environment: ```/projects/biomedimaging/biomedenv```
 
 ## Motivation
 Related work: [Review: U-net+Resnet - The Importance of Long & Short Skip Connections(Biomedical Image Segmentation)](https://medium.datadriveninvestor.com/review-u-net-resnet-the-importance-of-long-short-skip-connections-biomedical-image-ccbf8061ff43)
+
 ![skip-connection-short](skip-connection-short.png)
 
 ## Implementation ideas
