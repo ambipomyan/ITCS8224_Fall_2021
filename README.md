@@ -45,10 +45,13 @@ squeue -j 1234567
 environment: ```/projects/biomedimaging/biomedenv```
 
 ## Motivation
+Related work: [Review: U-net+Resnet - The Importance of Long & Short Skip Connections(Biomedical Image Segmentation)](https://medium.datadriveninvestor.com/review-u-net-resnet-the-importance-of-long-short-skip-connections-biomedical-image-ccbf8061ff43)
 ![skip-connection-short](skip-connection-short.png)
 
 ## Implementation ideas
-Stack Res blocks to network
+#### TODO: Implement a "scheduler" for inserting long & short skip-connections to the network to get better performance.
+#### Sample Code:
+Insert a short skip-connection to the network
 
 ```
 # Set forward pass.
