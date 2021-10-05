@@ -50,7 +50,9 @@ Related work: [Review: U-net+Resnet - The Importance of Long & Short Skip Connec
 ![skip-connection-short](skip-connection-short.png)
 
 ## Implementation ideas
-#### TODO: Implement a "scheduler" for inserting long & short skip-connections to the network to get better performance.
+#### TODO:
+Implement a "scheduler" for inserting long & short skip-connections to the network to get better performance.
+
 #### Sample Code:
 Insert a short skip-connection to the network
 
