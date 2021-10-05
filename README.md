@@ -16,7 +16,7 @@ conda install cudatoolkit
 conda install tensorflow-gpu
 ```
 
-### Submit job to cluster
+#### Submit job to cluster
 ```
 sbatch basic-submit.slurm
 ```
