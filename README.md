@@ -11,17 +11,17 @@ Use ```sorce ~/.bashrc``` to refresh then can use ```conda```
 
 #### Use conda to install cuda(cudatoolkit) and tensorflow(tensorflow-gpu)
 ```
-conda create -n py36 python=3.6
-conda activate py36
-conda install cudatoolkit
-conda install tensorflow-gpu
+(base)conda create -n py36 python=3.6
+(base)conda activate py36
+(py36)conda install cudatoolkit
+(py36)conda install tensorflow-gpu
 ```
 
 ### Run HelloWorld code
 ```
-conda activate py36
-python HelloWorld.py
-conda deactivate
+(base)conda activate py36
+(py36)python HelloWorld.py
+(py36)conda deactivate
 ```
 
 #### Submit job to cluster
