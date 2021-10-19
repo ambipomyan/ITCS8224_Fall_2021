@@ -2,19 +2,21 @@
 Medical Image Segmentation
 
 ## References
-[This link is a report for DL model](https://crfm.stanford.edu/report.html)
-Section 2.2 provides CV related information
+[This link is a report for DL model](https://crfm.stanford.edu/report.html) 
 
+1. Section 2.2 provides CV related information
+2. Section 3.1 provides Health related information
+
+## Topic
 [This link is the paper for ATTENTION](https://arxiv.org/abs/1706.03762)
-
 
 ## TODOs
 1. Collect related work for transformers/attention-based network
 2. Apply optimization
 
 ## Notes
-1. The location information is simplified at mean time lost
-2. Parallism for decoder part is impossible because of the dependency
+1. Adapt transformer from NLP to CV: The inputs include linear projection of image patches and their location information; The location information is simplified to (fairly small) constants
+3. Parallism of model training: Dependency of decoder part needs to be handled; For now force teaching and masking are most common solutions
 
 ## Related work
 
