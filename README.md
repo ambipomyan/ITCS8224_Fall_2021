@@ -1,9 +1,23 @@
 # ITCS8224_Fall_2021
 Medical Image Segmentation
 
-## TODOs:
+## References
+[This link is a report for DL model](https://crfm.stanford.edu/report.html)
+Section 2.2 provides CV related information
+
+[This link is the paper for ATTENTION](https://arxiv.org/abs/1706.03762)
+
+
+## TODOs
 1. Collect related work for transformers/attention-based network
 2. Apply optimization
+
+## Notes
+1. The location information is simplified at mean time lost
+2. Parallism for decoder part is impossible because of the dependency
+
+## Related work
+
 
 ## Source for this course
 
