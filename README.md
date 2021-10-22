@@ -30,12 +30,14 @@ Medical Image Segmentation
 7. [Swin-Unet](https://arxiv.org/abs/2105.05537): encoder(Swin-transformer-block+merging) - bottleneck(2xSwin-transformer-blocks) - decoder(expanding+Swin-transformer-block)  
 *Swin-transformer-block: Window\_based-MSA+MLP
 8. [DS-TransUnet](https://arxiv.org/abs/2106.06716): encoder(Swin-transformer-block+merging) - TIF as skip-connections - decoder(upsampling+Swin-transformer-block)  
-*TIF: feature fusion among small and large scale patched images
+\*TIF: feature fusion among small and large scale patched images
 9. [UTnet](https://arxiv.org/abs/2107.00781): encoder(MSA+conv) - decoder
 10. [PNS-Net](https://arxiv.org/abs/2105.08468): encoder - Normalize\_Self-attention\_block - decoder
 11. [Focal Transformer](https://arxiv.org/abs/2107.00641): encoder(patch\_embedding+MLP+FSA)  
-*FSA: Focal Self-Attention, applying location-based self-attention, also use window-based approach
+\*FSA: Focal Self-Attention, applying location-based self-attention, also use window-based approach
 12. [DOLG and hybrid-Swin-transformer](https://arxiv.org/abs/2110.03786): 1) conv - orthogonal\_fusion 2) conv - Swin-transformer
+13. [HRFormer](https://arxiv.org/abs/2110.09408): conv - multi-revolution-HRT - conv/conv(upsampling) - multi-revolution-HRT - conv  
+\*HRT: High Resolution Transformer, MSA+FFN
 
 ## Source for this course
 
