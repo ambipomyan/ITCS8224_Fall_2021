@@ -37,7 +37,7 @@ Medical Image Segmentation
 \*FSA: Focal Self-Attention, applying location-based self-attention, also use window-based approach
 12. [DOLG and hybrid-Swin-transformer](https://arxiv.org/abs/2110.03786): 1) conv - orthogonal\_fusion 2) conv - Swin-transformer
 13. [HRFormer](https://arxiv.org/abs/2110.09408): conv - multi-revolution-HRT - conv/conv(upsampling) - multi-revolution-HRT - conv  
-\*HRT: High Resolution Transformer, MSA+FFN
+\*HRT: High Resolution Transformer, MSA+FFN, using Local-window Self-Attention
 
 ## Source for this course
 
