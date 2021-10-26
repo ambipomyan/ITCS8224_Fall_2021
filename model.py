@@ -106,11 +106,11 @@ class AxialAttention_dynamic(nn.Module):
         #nn.init.uniform_(self.relative, -0.1, 0.1)
         nn.init.normal_(self.relative, 0., math.sqrt(1. / self.group_planes))
 
-class AxialAttention_wopos(nn.Module):
+class AxialAttention(nn.Module):
     def __init__(self, in_planes, out_planes, groups=8, kernel_size=56,
                  stride=1, bias=False, width=False):
         assert (in_planes % groups == 0) and (out_planes % groups == 0)
-        super(AxialAttention_wopos, self).__init__()
+        super(AxialAttention, self).__init__()
         self.in_planes = in_planes
         self.out_planes = out_planes
         self.groups = groups
@@ -214,12 +214,12 @@ class AxialBlock_dynamic(nn.Module):
 
         return out
 
-class AxialBlock_wopos(nn.Module):
+class AxialBlock(nn.Module):
     expansion = 2
 
     def __init__(self, inplanes, planes, stride=1, downsample=None, groups=1,
                  base_width=64, dilation=1, norm_layer=None, kernel_size=56):
-        super(AxialBlock_wopos, self).__init__()
+        super(AxialBlock, self).__init__()
         if norm_layer is None:
             norm_layer = nn.BatchNorm2d
         # print(kernel_size)
@@ -228,8 +228,8 @@ class AxialBlock_wopos(nn.Module):
         self.conv_down = conv1x1(inplanes, width)
         self.conv1 = nn.Conv2d(width, width, kernel_size = 1)
         self.bn1 = norm_layer(width)
-        self.hight_block = AxialAttention_wopos(width, width, groups=groups, kernel_size=kernel_size)
-        self.width_block = AxialAttention_wopos(width, width, groups=groups, kernel_size=kernel_size, stride=stride, width=True)
+        self.hight_block = AxialAttention(width, width, groups=groups, kernel_size=kernel_size)
+        self.width_block = AxialAttention(width, width, groups=groups, kernel_size=kernel_size, stride=stride, width=True)
         self.conv_up = conv1x1(width, planes * self.expansion)
         self.bn2 = norm_layer(planes * self.expansion)
         self.relu = nn.ReLU(inplace=True)
@@ -338,6 +338,16 @@ class medt_net(nn.Module):
         self.adjust_p   = nn.Conv2d(int(128*s) , num_classes, kernel_size=1, stride=1, padding=0)
         self.soft_p     = nn.Softmax(dim=1)
 
+# qkv_transform is working as conv1d (todo: customization)
+        for m in self.modules():
+        if isinstance(m, (nn.Conv2d, nn.Conv1d)):
+            if isinstance(m, qkv_transform):
+                pass
+            else:
+                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+        elif isinstance(m, (nn.BatchNorm2d, nn.BatchNorm1d, nn.GroupNorm)):
+            nn.init.constant_(m.weight, 1)
+            nn.init.constant_(m.bias, 0)
 
     def _make_layer(self, block, planes, blocks, kernel_size=56, stride=1, dilate=False):
         norm_layer = self._norm_layer
@@ -441,7 +451,7 @@ class medt_net(nn.Module):
         return self._forward_impl(x)
 
 def MedT(pretrained=False, **kwargs):
-    model = medt_net(AxialBlock_dynamic,AxialBlock_wopos, [1, 1, 1, 1], s= 0.125,  **kwargs)
+    model = medt_net(AxialBlock_dynamic,AxialBlock, [1, 1, 1, 1], s= 0.125,  **kwargs)
     return model
 
 # EOF
