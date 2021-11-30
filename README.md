@@ -24,7 +24,7 @@ mim install mmdet
 ```
 
 ### Run
-The transformer related network need pretrained model, for its slow convergency. In this case, the pre-trained dataset is [COCO](https://cocodataset.org/#home).
+The transformer related network needs pretrained model, for its slow convergency. In this case, the pre-trained dataset is [COCO](https://cocodataset.org/#home).
 
 ```
 python demo/image_demo.py \
