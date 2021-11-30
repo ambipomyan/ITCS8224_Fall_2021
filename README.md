@@ -1,6 +1,17 @@
 # ITCS8224_Fall_2021
 Medical Image Segmentation
 
+## Demo
+
+## Notes
+1. Adapt transformer from NLP to CV: The inputs include linear projection of image patches and their location information; Usually, the location information is simplified to (fairly small) constant
+2. Computation complexity: The complexity of self-attention computation is considered as O(n^2); Window-based self-attention is now popular, e.g. Swin-Transformer/Focal-Transformer
+3. Parallism of training: Dependency of decoder part needs to be handled; For now force teaching and masking are most common solutions
+4. Convergency of training: Vanishing gradient is handled by skip-connection; e.g. conv and conv(upsampling) are usually connected with skip-connection in U-net
+5. Adapt classes of pre-trained models to transformer model, e.g. from cake to tumor/from clock to brain...
+6. Use smooth edges for segmented parts
+7. Using multi-modal data
+
 ## References
 [This link is a report for DL model](https://crfm.stanford.edu/report.html) 
 
@@ -13,12 +24,6 @@ Medical Image Segmentation
 ## TODOs
 1. Collect related work for transformers/attention-based network
 2. Apply optimization
-
-## Notes
-1. Adapt transformer from NLP to CV: The inputs include linear projection of image patches and their location information; Usually, the location information is simplified to (fairly small) constant
-2. Computation complexity: The complexity of self-attention computation is considered as O(n^2); Window-based self-attention is now popular, e.g. Swin-Transformer/Focal-Transformer
-3. Parallism of training: Dependency of decoder part needs to be handled; For now force teaching and masking are most common solutions
-4. Convergency of training: Vanishing gradient is handled by skip-connection; e.g. conv and conv(upsampling) are usually connected with skip-connection in U-net
 
 ## Related work
 1. [transBTS](https://arxiv.org/abs/2103.04430): conv - encoder(MSA+FFN) - conv(upsampling)
