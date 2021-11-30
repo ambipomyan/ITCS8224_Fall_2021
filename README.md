@@ -2,6 +2,33 @@
 Medical Image Segmentation
 
 ## Demo
+This demo is created following the idea of [MMDetection](https://github.com/open-mmlab/mmdetection), which is a python pakage for Object-Detection. It contains various network frames including Swin-Transformer related ones, and I think it is a good and down-to-earth start.
+
+### Envoronment
+The environment is handled by conda, as usual, and ```conda update -n base -c defaults conda``` may be needed.
+
+```
+conda create -n openmmlab python=3.7 -y
+conda activate openmmlab
+conda install pytorch torchvision -c pytorch
+pip install openmim
+mim install mmdet
+```
+
+### Run
+The transformer related network need pretrained model, for its slow convergency. In this case, the pre-trained dataset is [COCO](https://cocodataset.org/#home).
+
+```
+python demo/image_demo.py \
+demo/demo.jpg \
+configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py \
+checkpoints/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth \
+--device cpu
+```
+
+### Result
+This pre-trained model do not contain any classes related to tumors or brain, then the label is not correct.
+![](/demo/result.jpg)
 
 ## Notes
 1. Adapt transformer from NLP to CV: The inputs include linear projection of image patches and their location information; Usually, the location information is simplified to (fairly small) constant
