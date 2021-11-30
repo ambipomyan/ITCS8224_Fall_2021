@@ -5,8 +5,16 @@ Medical Image Segmentation
 This demo is created following the idea of [MMDetection](https://github.com/open-mmlab/mmdetection), which is a python pakage for Object-Detection. It contains various network frames including Swin-Transformer related ones, and I think it is a good and down-to-earth start.
 
 ### Envoronment
-The environment is handled by conda, as usual, and ```conda update -n base -c defaults conda``` may be needed.
+The prerequisites are:
 
+Linux or macOS (Windows is in experimental support)  
+Python 3.6+  
+PyTorch 1.3+  
+CUDA 9.2+ (If you build PyTorch from source, CUDA 9.0 is also compatible)  
+GCC 5+  
+MMCV
+
+The environment is handled by conda, as usual, and ```conda update -n base -c defaults conda``` may be needed. For the sever, do only need these steps:
 ```
 conda create -n openmmlab python=3.7 -y
 conda activate openmmlab
@@ -39,14 +47,10 @@ This pre-trained model do not contain any classes related to tumors or brain, th
 6. Use smooth edges for segmented parts
 7. Using multi-modal data
 
-## References
-[This link is a report for DL model](https://crfm.stanford.edu/report.html) 
-
-1. Section 2.2 provides CV related information
-2. Section 3.1 provides Health related information
-
-## Topic
-[This link is the paper for ATTENTION](https://arxiv.org/abs/1706.03762)
+## Topics
+[This link is a report for DL model](https://crfm.stanford.edu/report.html)  
+[This link is the paper for ATTENTION](https://arxiv.org/abs/1706.03762)  
+[This link is the Get Started Doc. of MMDetection](https://mmdetection.readthedocs.io/en/v2.19.0/get_started.html)
 
 ## TODOs
 1. Collect related work for transformers/attention-based network
