@@ -35,7 +35,8 @@ checkpoints/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth \
 ```
 
 ### Result
-This pre-trained model do not contain any classes related to tumors or brain, then the label is not correct.
+This pre-trained model do not contain any classes related to tumors or brain, then the label is not correct. The original image is from [Wiki](https://en.wikipedia.org/wiki/Brain_tumor).
+
 ![](/demo/result.jpg)
 
 ## Notes
