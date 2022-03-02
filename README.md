@@ -101,3 +101,6 @@ squeue -j 1234567
 ```
 
 ```ST```=```PD``` indicates Pending
+
+## MNIST-3D-pkl
+Code for transfering .jpg data to a 3D pkl
